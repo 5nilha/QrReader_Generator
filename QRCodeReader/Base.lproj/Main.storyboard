@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Rt-Fr-uGQ">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Reader View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="QRReaderViewController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEu-XP-NMh">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PEu-XP-NMh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Fm9-rI-f8m"/>
+                            <constraint firstItem="PEu-XP-NMh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MZ8-x2-PkM"/>
+                            <constraint firstAttribute="bottom" secondItem="PEu-XP-NMh" secondAttribute="bottom" id="krc-eB-wK5"/>
+                            <constraint firstItem="PEu-XP-NMh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pjN-zp-ptV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tb4-19-etp"/>
+                    <connections>
+                        <segue destination="9Zd-zr-uyR" kind="show" identifier="goToQRResult" id="iQS-nK-qh4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="137.94642857142856"/>
+        </scene>
+        <!--QR Reader-->
+        <scene sceneID="iga-XI-oYP">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gs4-1A-gb8" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="QR Reader" image="qrcode.viewfinder" catalog="system" id="cZY-Gy-scQ"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HTD-O0-A1E">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="OeZ-aW-CsZ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OdQ-ho-Dn6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Generator View Controller-->
+        <scene sceneID="0fY-ra-3bi">
+            <objects>
+                <viewController id="8S4-jY-1KC" customClass="QRGeneratorViewController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iww-jM-6bg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9iM-mG-2Dz">
+                                <rect key="frame" x="20" y="113" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="050-Ax-iBU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="textFieldDidChangeValue:" destination="8S4-jY-1KC" eventType="editingChanged" id="MPj-op-nJd"/>
+                                </connections>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ykx-nn-hRc">
+                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="3nf-Lq-reH"/>
+                                    <constraint firstAttribute="width" constant="200" id="j03-BW-2c5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Your Code will be generated automatically)" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMO-Dl-bgs">
+                                <rect key="frame" x="40.5" y="193" width="333.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ttT-aa-jt4" firstAttribute="trailing" secondItem="9iM-mG-2Dz" secondAttribute="trailing" constant="20" id="0FZ-zy-95a"/>
+                            <constraint firstItem="UMO-Dl-bgs" firstAttribute="top" secondItem="9iM-mG-2Dz" secondAttribute="bottom" constant="30" id="5d1-MI-YNw"/>
+                            <constraint firstItem="ykx-nn-hRc" firstAttribute="centerY" secondItem="Iww-jM-6bg" secondAttribute="centerY" id="5gk-x3-QFK"/>
+                            <constraint firstItem="9iM-mG-2Dz" firstAttribute="leading" secondItem="ttT-aa-jt4" secondAttribute="leading" constant="20" id="LyM-WB-qte"/>
+                            <constraint firstItem="UMO-Dl-bgs" firstAttribute="centerX" secondItem="Iww-jM-6bg" secondAttribute="centerX" id="Lyk-OF-FKE"/>
+                            <constraint firstItem="ykx-nn-hRc" firstAttribute="centerX" secondItem="Iww-jM-6bg" secondAttribute="centerX" id="Tvi-vL-er8"/>
+                            <constraint firstItem="9iM-mG-2Dz" firstAttribute="top" secondItem="ttT-aa-jt4" secondAttribute="top" constant="25" id="iUO-k2-S65"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ttT-aa-jt4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="8BE-r5-W7p"/>
+                    <connections>
+                        <outlet property="qrCodeImage" destination="ykx-nn-hRc" id="OCf-Dy-uee"/>
+                        <outlet property="textField" destination="9iM-mG-2Dz" id="WSd-Vy-HI0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="17B-p3-n7p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1121.7391304347827" y="888.61607142857144"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="4Vo-qj-tQE">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="5Rt-Fr-uGQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uhQ-yH-Mcs">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Gs4-1A-gb8" kind="relationship" relationship="viewControllers" id="VCH-vQ-k0G"/>
+                        <segue destination="kEU-iz-qd4" kind="relationship" relationship="viewControllers" id="kLh-nq-8Zo"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d46-kX-PbG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+        <!--QR Generator-->
+        <scene sceneID="D0r-xd-dhh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kEU-iz-qd4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="QR Generator" image="qrcode" catalog="system" id="SMc-oZ-o3q"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Kp-Zx-juD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8S4-jY-1KC" kind="relationship" relationship="rootViewController" id="F4N-US-tfG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oJM-Ia-S7n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="889"/>
+        </scene>
+        <!--Qr Result View Controller-->
+        <scene sceneID="twJ-mf-kSK">
+            <objects>
+                <viewController id="9Zd-zr-uyR" customClass="QrResultViewController" customModule="QRCodeReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OAf-hA-kSV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ukI-Nr-riN">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QR String" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pa2-rF-VGc">
+                                        <rect key="frame" x="20" y="20" width="374" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="Pa2-rF-VGc" firstAttribute="leading" secondItem="ukI-Nr-riN" secondAttribute="leading" constant="20" id="BQ2-rh-gn9"/>
+                                    <constraint firstItem="Pa2-rF-VGc" firstAttribute="top" secondItem="ukI-Nr-riN" secondAttribute="top" constant="20" id="YHg-Qs-IXz"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pa2-rF-VGc" secondAttribute="trailing" constant="20" id="fM0-f6-mbc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="ukI-Nr-riN" secondAttribute="bottom" id="GEj-lf-n9M"/>
+                            <constraint firstItem="ukI-Nr-riN" firstAttribute="trailing" secondItem="Vsn-u4-MWM" secondAttribute="trailing" id="gcG-jD-arN"/>
+                            <constraint firstItem="ukI-Nr-riN" firstAttribute="leading" secondItem="Vsn-u4-MWM" secondAttribute="leading" id="ics-TJ-rNA"/>
+                            <constraint firstItem="ukI-Nr-riN" firstAttribute="top" secondItem="Vsn-u4-MWM" secondAttribute="top" id="yfI-TJ-RWs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Vsn-u4-MWM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fKB-TV-t2x"/>
+                    <connections>
+                        <outlet property="qrResultLabel" destination="Pa2-rF-VGc" id="mRK-Ae-xSR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3TG-B5-6b2" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2863.768115942029" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="qrcode" catalog="system" width="64" height="56"/>
+        <image name="qrcode.viewfinder" catalog="system" width="64" height="56"/>
+    </resources>
+</document>
